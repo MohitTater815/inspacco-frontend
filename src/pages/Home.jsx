@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { isAuthenticated } from "../utils/middleware";
 
 const Home = () => {
+    const isAuthenticatedValue = isAuthenticated();
     return (
         <div className="w-full bg-gray-900   glass">
 
@@ -13,9 +15,16 @@ const Home = () => {
                     your assets effortlessly. Get started today and streamline your
                     workflow.
                 </p>
-                <Link to="/signup" className="mt-6 btn btn-secondary">
-                    Get Started
-                </Link>
+
+                {!isAuthenticatedValue ? (
+                    <Link to="/auth" className="mt-6 btn btn-secondary">
+                        Get Started
+                    </Link>
+                ) : (
+                    <Link to="/Dashboard" className="mt-6 btn btn-secondary">
+                        Dashboard
+                    </Link>
+                )}
             </section>
         </div>
     );
