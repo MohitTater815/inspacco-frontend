@@ -21,7 +21,7 @@ const Navbar = () => {
         <div>
             <div className="navbar ">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-black dark:text-white text-xl" href="/">Asset Management</a>
+                    <a className="btn btn-ghost  text-xl" href="/">Asset Management</a>
                 </div>
                 <div>
 
