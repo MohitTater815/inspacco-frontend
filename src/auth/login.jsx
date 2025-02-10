@@ -13,13 +13,13 @@ const Login = () => {
         e.preventDefault();
         setLoader(true);
         try {
-            const response = await axiosInstance.post("/login", { email, password });
+            const response = await axiosInstance.post("/api/login", { email, password });
             localStorage.setItem("token", response.data.token);
             showAlert("success", "Login successful!", 3000);
             navigate("/dashboard");
         } catch (error) {
             console.error("Login failed", error);
-            showAlert("success", "Login successful!", 3000);
+            showAlert("error", error?.response?.data?.message ? error?.response?.data?.message : "Error Logging in", 3000);
         } finally {
             setLoader(false);
         }

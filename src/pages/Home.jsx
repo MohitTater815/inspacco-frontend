@@ -1,22 +1,27 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../utils/middleware";
 
 const Home = () => {
-    const isAuthenticatedValue = isAuthenticated();
-    return (
-        <div className="w-full bg-gray-900   glass">
+    const [authStatus, setAuthStatus] = useState(false);
 
-            <section className="text-center  py-20 px-6">
+    useEffect(() => {
+        setAuthStatus(isAuthenticated());
+    }, []);
+
+
+    return (
+        <div className="w-full bg-gray-900 glass">
+            <section className="text-center py-20 px-6">
                 <h2 className="text-4xl font-bold text-gray-100 mb-4">
                     Efficiently Manage Your Assets
                 </h2>
                 <p className="text-gray-100 max-w-2xl mx-auto">
                     Our asset management module helps you track, organize, and optimize
-                    your assets effortlessly. Get started today and streamline your
-                    workflow.
+                    your assets effortlessly. Get started today and streamline your workflow.
                 </p>
 
-                {!isAuthenticatedValue ? (
+                {!authStatus ? (
                     <Link to="/auth" className="mt-6 btn btn-secondary">
                         Get Started
                     </Link>
@@ -29,6 +34,5 @@ const Home = () => {
         </div>
     );
 };
-
 
 export default Home;

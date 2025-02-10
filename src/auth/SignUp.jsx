@@ -16,7 +16,7 @@ const SignUp = () => {
         e.preventDefault();
         setLoader(true);
         try {
-            await axiosInstance.post("/signup", { name, email, password });
+            await axiosInstance.post("/api/signup", { name, email, password });
             // window.location.href = "/login";
             showAlert("success", "Registration successful!", 3000);
             navigate("/protected");
@@ -69,7 +69,7 @@ const SignUp = () => {
                                     <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                                 </div>
 
-                                <button type="submit" className="w-full btn btn-outline btn-sm  bg-slate-600 glass">{Loader ? (<>Creating...</>) : (<>Create an account</>)}</button>
+                                <button type="submit" className="w-full btn btn-outline btn-sm text-white  bg-slate-600 glass">{Loader ? (<>Creating...</>) : (<>Create an account</>)}</button>
                             </div>
                         </div>
                     </div>
@@ -80,41 +80,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-// <div className=" flex items-center justify-center">
-//     <form className=" p-6 rounded shadow-md w-96" onSubmit={handleSignUp}>
-//         <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
-//         <div className="mb-4">
-//             <label className="block text-gray-700">Name</label>
-//             <input
-//                 type="text"
-//                 className="input input-bordered w-full"
-//                 value={name}
-//                 onChange={(e) => setName(e.target.value)}
-//                 required
-//             />
-//         </div>
-//         <div className="mb-4">
-//             <label className="block text-gray-700">Email</label>
-//             <input
-//                 type="email"
-//                 className="input input-bordered w-full"
-//                 value={email}
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 required
-//             />
-//         </div>
-//         <div className="mb-4">
-//             <label className="block text-gray-700">Password</label>
-//             <input
-//                 type="password"
-//                 className="input input-bordered w-full"
-//                 value={password}
-//                 onChange={(e) => setPassword(e.target.value)}
-//                 required
-//             />
-//         </div>
-//         <button type="submit" className="btn btn-primary w-full">
-//             Sign Up
-//         </button>
-//     </form>
-// </div>
