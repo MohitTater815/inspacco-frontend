@@ -42,12 +42,12 @@ An **Asset Management Dashboard** built with **React (Vite)** for the frontend a
 - `POST /api/auth/logout` - User logout
 
 ### 🔹 Assets
-- `POST /api/assets` - Fetch all assets
-- `POST /api/assets` - Add a new asset
-- `POST /api/assets/:id` - Edit asset
-- `POST /api/assets/:id` - Delete asset
+- `POST /asset/dashboard/:id` - Fetch all assets
+- `POST /asset/add` - Add a new asset
+- `POST /asset/edit/:id` - Edit asset
+- `POST /asset/remove/:id` - Delete asset
 
 ### 🔹 Categories
-- `POST /api/categories` - Fetch all categories
-- `POST /api/categories` - Add a new category
-- `POST /api/categories/:id` - Delete category
+- `GET /catagory/all/:id` - Fetch all categories
+- `POST /catagory/add` - Add a new category
+- `POST /catagory/:id` - Delete category
