@@ -14,7 +14,7 @@ const Home = () => {
         <div className="w-full bg-gray-900 glass">
             <section className="text-center py-20 px-6">
                 <h2 className="text-4xl font-bold text-gray-100 mb-4">
-                    Efficiently Manage Your Assets
+                    Manage Your Assets
                 </h2>
                 <p className="text-gray-100 max-w-2xl mx-auto">
                     Our asset management module helps you track, organize, and optimize
